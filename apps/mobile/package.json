@@ -13,6 +13,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@expo/metro-runtime": "^57.0.14",
     "@fittrack/business-logic": "workspace:*",
     "@fittrack/config": "workspace:*",
     "@fittrack/supabase": "workspace:*",
