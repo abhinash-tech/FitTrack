@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/* ─── CSS Custom Properties (Design Tokens) ──────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --background: 222 47% 7%;
+  --background-surface: 222 44% 11%;
+  --background-surface-2: 220 38% 14%;
+
+  /* Card */
+  --card: 222 44% 11%;
+  --card-foreground: 210 40% 98%;
+
+  /* Primary — Electric Teal */
+  --primary: 162 97% 43%;
+  --primary-foreground: 222 47% 7%;
+  --primary-dim: 160 80% 35%;
+  --primary-glow: rgba(6, 214, 160, 0.15);
+
+  /* Secondary — Indigo */
+  --secondary: 239 84% 67%;
+  --secondary-foreground: 210 40% 98%;
+  --secondary-dim: 239 84% 55%;
+
+  /* Text */
+  --foreground: 210 40% 98%;
+  --muted-foreground: 215 20% 45%;
+  --subtle-foreground: 215 16% 27%;
+
+  /* Borders */
+  --border: 217 32% 17%;
+  --border-muted: 217 25% 12%;
+
+  /* Input */
+  --input: 217 32% 14%;
+  --ring: 162 97% 43%;
+
+  /* Semantic */
+  --success: 160 84% 39%;
+  --warning: 38 92% 50%;
+  --error: 0 72% 51%;
+  --info: 217 91% 60%;
+  --muted: 217 32% 17%;
+
+  /* Chart palette */
+  --chart-hydration: 162 97% 43%;
+  --chart-calories: 38 92% 50%;
+  --chart-protein: 239 84% 67%;
+  --chart-carbs: 24 95% 53%;
+  --chart-fat: 330 81% 60%;
+  --chart-sleep: 262 83% 58%;
+  --chart-steps: 84 81% 44%;
+
+  /* Radius */
+  --radius: 0.75rem;
+}
+
+/* ─── Base Styles ─────────────────────────────────────────────────────────── */
+
+* {
+  border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* ─── Focus Ring ──────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+
+.glass-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-elevated {
+  background: hsl(var(--background-surface-2));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.teal-glow {
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--background-surface-2)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+/* ─── Tailwind v4 Custom Tokens ───────────────────────────────────────────── */
+
+@theme {
+  --color-background: hsl(222 47% 7%);
+  --color-surface: hsl(222 44% 11%);
+  --color-primary: hsl(162 97% 43%);
+  --color-secondary: hsl(239 84% 67%);
+  --color-success: hsl(160 84% 39%);
+  --color-warning: hsl(38 92% 50%);
+  --color-error: hsl(0 72% 51%);
+  --radius-card: 0.75rem;
+}

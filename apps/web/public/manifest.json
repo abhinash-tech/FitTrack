@@ -1,0 +1,16 @@
+{
+  "name": "FitTrack",
+  "short_name": "FitTrack",
+  "description": "Your Unified Health & Fitness Dashboard",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1E",
+  "theme_color": "#06D6A0",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

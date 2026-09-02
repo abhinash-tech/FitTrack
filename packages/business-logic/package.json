@@ -1,0 +1,24 @@
+{
+  "name": "@fittrack/business-logic",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@fittrack/config": "workspace:*",
+    "@fittrack/types": "workspace:*",
+    "@fittrack/utils": "workspace:*",
+    "@fittrack/validation": "workspace:*",
+    "@google/generative-ai": "^0.24.1",
+    "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.7"
+  }
+}
