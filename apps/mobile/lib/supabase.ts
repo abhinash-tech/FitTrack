@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { createBrowserClient } from "@fittrack/supabase/src/client"
+import { createBrowserClient } from "@fittrack/supabase/client"
 import { Platform } from "react-native"
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co"

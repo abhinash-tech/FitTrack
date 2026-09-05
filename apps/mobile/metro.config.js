@@ -16,7 +16,5 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, "node_modules"),
 ]
 
-// Force Metro to resolve dependencies from the nodeModulesPaths
-config.resolver.disableHierarchicalLookup = true
-
 module.exports = withNativeWind(config, { input: "./global.css" })
+
