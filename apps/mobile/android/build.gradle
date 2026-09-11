@@ -23,15 +23,13 @@ allprojects {
   }
 }
 
-apply plugin: "expo-root-project"
-apply plugin: "com.facebook.react.rootproject"
-
 subprojects {
-    afterEvaluate { project ->
-        project.tasks.configureEach { task ->
-            if (task.name == 'assertMinimalReactNativeVersionTask') {
-                task.enabled = false
-            }
+    tasks.configureEach { task ->
+        if (task.name == 'assertMinimalReactNativeVersionTask') {
+            task.enabled = false
         }
     }
 }
+
+apply plugin: "expo-root-project"
+apply plugin: "com.facebook.react.rootproject"
